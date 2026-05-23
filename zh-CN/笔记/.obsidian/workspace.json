@@ -66,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "你是",
+                "query": "绘图",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -87,7 +87,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -196,7 +197,7 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "773913e2861c63cc",
+  "active": "a90fe6a8372e2868",
   "lastOpenFiles": [
     "脚本开发/Prompt.md",
     "课程/人工智能与机器学习/Prompt.md",
