@@ -91,6 +91,22 @@ html, body {
   max-width: 760px;
 }
 
+.VPHomeHero > .container > .image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.VPHomeHero > .container > .image .image-container {
+  width: min(360px, 100%);
+  height: auto;
+  transform: none;
+}
+
+.VPHomeHero > .container > .image .image-bg {
+  display: none;
+}
+
 .VPHomeHero > .container > .main > h1 {
   letter-spacing: 0;
 }
@@ -196,6 +212,60 @@ html, body {
   stroke: none;
 }
 
+.home-hero-aside {
+  width: 100%;
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 28px;
+  color: var(--vp-c-text-2);
+}
+
+.home-hero-aside-kicker {
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-3);
+}
+
+.home-hero-aside-title {
+  margin: 14px 0 24px;
+  max-width: 280px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: var(--vp-c-text-1);
+}
+
+.home-hero-aside-list {
+  display: grid;
+  gap: 2px;
+}
+
+.home-hero-aside-item {
+  display: grid;
+  gap: 4px;
+  padding: 13px 0;
+  border-top: 1px solid var(--vp-c-divider);
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-hero-aside-item:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.home-hero-aside-item span {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--vp-c-text-1);
+}
+
+.home-hero-aside-item small {
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+}
+
 .dark .VPHome {
   background:
     radial-gradient(circle at 12% 18%, rgba(197, 100, 115, 0.12), transparent 28%),
@@ -210,6 +280,10 @@ html, body {
   .VPHomeHero > .container {
     padding-top: 96px;
     padding-bottom: 88px;
+  }
+
+  .VPHomeHero > .container > .image {
+    display: none;
   }
 
   .VPHomeHero > .container > .main .name,
