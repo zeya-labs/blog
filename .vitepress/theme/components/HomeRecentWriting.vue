@@ -30,6 +30,19 @@ function formatTitle(item: RecentUpdate) {
   return matched?.[1] || item.title || '未命名'
 }
 
+function formatCategory(item: RecentUpdate) {
+  const path = item.filePath || ''
+  const matched = path.match(/^zh-CN\/笔记\/(.+)\/[^/]+\.md$/)
+
+  if (matched?.[1])
+    return `笔记 · ${matched[1].split('/')[0]}`
+
+  if (!item.category || item.category === 'Un-categorized')
+    return '笔记'
+
+  return item.category
+}
+
 const writings = computed(() => (updates as RecentUpdate[]).slice(0, 5))
 </script>
 
@@ -53,7 +66,7 @@ const writings = computed(() => (updates as RecentUpdate[]).slice(0, 5))
           <a class="home-recent-link" :class="{ featured: index === 0 }" :href="item.url">
             <template v-if="index === 0">
               <div class="home-recent-meta">
-                <span>{{ item.category === 'Un-categorized' ? '笔记' : item.category }}</span>
+                <span>{{ formatCategory(item) }}</span>
                 <span v-if="formatDate(item.lastUpdated)">· {{ formatDate(item.lastUpdated) }}</span>
               </div>
               <h3>{{ formatTitle(item) }}</h3>
@@ -64,7 +77,7 @@ const writings = computed(() => (updates as RecentUpdate[]).slice(0, 5))
                 <time v-if="formatDate(item.lastUpdated)">{{ formatDate(item.lastUpdated) }}</time>
               </div>
               <div class="home-recent-meta">
-                {{ item.category === 'Un-categorized' ? '笔记' : item.category }}
+                {{ formatCategory(item) }}
               </div>
             </template>
           </a>
