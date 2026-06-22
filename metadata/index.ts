@@ -30,8 +30,10 @@ export const creators: Creator[] = [
     links: [
       { type: 'github', icon: 'github', link: 'https://github.com/zeya-labs' },
     ],
-    nameAliases: ['Zeya'],
-    emailAliases: [],
+    nameAliases: ['Zeya', 'xyea'],
+    emailAliases: ['xyeaovo@gmail.com'],
+    mapByNameAliases: ['Zeya', 'xyea'],
+    mapByEmailAliases: ['xyeaovo@gmail.com'],
   },
 ].map<Creator>((c) => {
   c.avatar = c.avatar || getAvatarUrlByGithubName(c.username)
