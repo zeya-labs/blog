@@ -1,4 +1,4 @@
-```
+```bash
 bash -lc '
 set -e
 

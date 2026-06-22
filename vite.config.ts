@@ -31,6 +31,7 @@ export default defineConfig(async ({ command }) => {
             join('zh-CN', 'toc.md'),
             join('zh-CN', 'index.md'),
           ],
+          exclude: (_id, context) => context.helpers.idStartsWith(join('zh-CN', '笔记')),
         },
       },
     },

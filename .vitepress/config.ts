@@ -4,12 +4,102 @@ import { calculateSidebar } from '@nolebase/vitepress-plugin-sidebar'
 // import { buildEndGenerateOpenGraphImages } from '@nolebase/vitepress-plugin-og-image/vitepress'
 import MarkdownItFootnote from 'markdown-it-footnote'
 import MarkdownItMathjax3 from 'markdown-it-mathjax3'
+import { existsSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { defineConfig } from 'vitepress'
 
 import { githubRepoLink, siteDescription, siteName } from '../metadata'
 import head from './head'
 
 const nolebase = presetMarkdownIt()
+
+function hasTopLevelHeading(content: string) {
+  let fence: string | undefined
+
+  for (const line of content.split('\n')) {
+    const fenceMatch = line.match(/^(\s*)(`{3,}|~{3,})/)
+    if (fenceMatch) {
+      const marker = fenceMatch[2][0]
+
+      if (!fence)
+        fence = marker
+      else if (fence === marker)
+        fence = undefined
+
+      continue
+    }
+
+    if (!fence && /^#\s+/.test(line))
+      return true
+  }
+
+  return false
+}
+
+function titleFromMarkdownPath(path?: string) {
+  if (!path || !path.endsWith('.md'))
+    return ''
+
+  const normalized = path.replace(/\\/g, '/')
+  const parts = normalized.split('/')
+  const fileName = parts.at(-1)?.replace(/\.md$/, '') || ''
+  const title = fileName === 'index'
+    ? parts.at(-2) || fileName
+    : fileName
+
+  return decodeURIComponent(title)
+}
+
+function isNotePath(path?: string) {
+  return !!path?.replace(/\\/g, '/').includes('zh-CN/笔记/')
+}
+
+function titleFromMarkdownContent(content: string) {
+  let fence: string | undefined
+
+  for (const line of content.split('\n')) {
+    const fenceMatch = line.match(/^(\s*)(`{3,}|~{3,})/)
+    if (fenceMatch) {
+      const marker = fenceMatch[2][0]
+
+      if (!fence)
+        fence = marker
+      else if (fence === marker)
+        fence = undefined
+
+      continue
+    }
+
+    if (!fence) {
+      const headingMatch = line.match(/^#\s+(.+)$/)
+      if (headingMatch?.[1])
+        return headingMatch[1].trim()
+    }
+  }
+
+  return ''
+}
+
+function resolveSidebarTitle(item: any): any {
+  if (item.items)
+    return { ...item, items: item.items.map(resolveSidebarTitle) }
+
+  if (!item.link?.startsWith('/zh-CN/笔记/'))
+    return item
+
+  const filePath = join(process.cwd(), `${decodeURIComponent(item.link).replace(/^\//, '')}.md`)
+  if (!existsSync(filePath))
+    return item
+
+  const content = readFileSync(filePath, 'utf8')
+  const title = titleFromMarkdownContent(content) || titleFromMarkdownPath(filePath)
+
+  return title ? { ...item, text: title, index: title } : item
+}
+
+const sidebar = calculateSidebar([
+  { folderName: 'zh-CN/笔记', separate: true },
+], 'zh-CN').map(resolveSidebarTitle)
 
 export default defineConfig({
   vue: {
@@ -117,9 +207,7 @@ export default defineConfig({
           pattern: `${githubRepoLink}/tree/main/:path`,
           text: '编辑本页面',
         },
-        sidebar: calculateSidebar([
-          { folderName: 'zh-CN/笔记', separate: true },
-        ], 'zh-CN'),
+        sidebar,
         footer: {
           message: '用 <span style="color: #e25555;">&#9829;</span> 撰写',
           copyright:
@@ -135,6 +223,20 @@ export default defineConfig({
     },
     math: true,
     preConfig: async (md) => {
+      md.core.ruler.before('normalize', 'auto_title_for_notes', (state) => {
+        const path = state.env.path || state.env.relativePath || state.env.filePath
+
+        if (!isNotePath(path))
+          return
+
+        if (hasTopLevelHeading(state.src))
+          return
+
+        const title = titleFromMarkdownPath(path)
+        if (title)
+          state.src = `# ${title}\n\n${state.src}`
+      })
+
       await nolebase.install(md)
     },
     config: (md) => {
