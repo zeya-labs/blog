@@ -1,8 +1,8 @@
-# zeya Knowledge Base
+# Zeya Knowledge Base
 
 A place for notes, memories, knowledge, and ideas.
 
-This repository contains zeya's personal knowledge base and VitePress site configuration. It is adapted from the Nólëbase / VitePress structure and publishes Markdown notes as a static site.
+This repository contains Zeya's personal knowledge base and VitePress site configuration. It is adapted from the Nólëbase / VitePress structure and publishes Markdown notes as a static site.
 
 ## Development
 

@@ -2,8 +2,8 @@ import type { Creator } from '../scripts/types/metadata'
 import { getAvatarUrlByGithubName } from '../scripts/utils'
 
 /** 文本 */
-export const siteName = 'zeya 的知识库'
-export const siteShortName = 'zeya'
+export const siteName = 'Zeya 的知识库'
+export const siteShortName = 'Zeya'
 export const siteDescription = '记录回忆，知识和畅想的地方'
 
 /** 文档所在目录 */
@@ -22,7 +22,7 @@ export const targetDomain = `https://${plainTargetDomain}`
 /** 创作者 */
 export const creators: Creator[] = [
   {
-    name: 'zeya',
+    name: 'Zeya',
     avatar: '',
     username: 'zeya-labs',
     title: '知识库维护者',
@@ -30,7 +30,7 @@ export const creators: Creator[] = [
     links: [
       { type: 'github', icon: 'github', link: 'https://github.com/zeya-labs' },
     ],
-    nameAliases: ['zeya'],
+    nameAliases: ['Zeya'],
     emailAliases: [],
   },
 ].map<Creator>((c) => {
