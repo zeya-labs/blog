@@ -71,80 +71,154 @@ html, body {
   max-width: unset;
 }
 
-/* 标题所需要的字体 */
-@font-face {
-  font-family: tengwarannatar;
-  src: url(/tengwar-annatar-glaemscrafu.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
+/* 首页个人介绍样式 */
+.VPHome {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(197, 100, 115, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(250, 248, 244, 0.68), transparent 42%);
 }
 
-/* 标题所需要的字体 */
-@font-face {
-  font-family: tengwarannatar-bold;
-  src: url(/tengwar-annatar-glaemscrafu-bold.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
+.VPHomeHero {
+  min-height: calc(100vh - var(--vp-nav-height));
 }
 
-/* 首页标题样式 */
+.VPHomeHero > .container {
+  padding-top: 18vh;
+  padding-bottom: 16vh;
+}
+
+.VPHomeHero > .container > .main {
+  max-width: 760px;
+}
+
 .VPHomeHero > .container > .main > h1 {
-  font-size: 5rem;
-  font-family: 'tengwarannatar-bold';
+  letter-spacing: 0;
 }
 
-.VPHero.has-image span.name:nth-child(1) {
-  line-height: 7rem;
+.VPHomeHero > .container > .main .name,
+.VPHomeHero > .container > .main .text {
+  max-width: 760px;
+  line-height: 1.05;
+  font-size: 76px;
+  font-weight: 650;
 }
 
-/* 首页子标题样式 */
-.VPHomeHero > .container > .main > .text {
-  padding-top: 45px;
-  font-size: 4rem;
+.VPHomeHero > .container > .main .name {
+  color: var(--vp-c-text-2);
+  -webkit-text-fill-color: var(--vp-c-text-2);
 }
 
-/* 首页介绍样式 */
+.VPHomeHero > .container > .main .text {
+  padding-top: 8px;
+  color: var(--vp-c-text-1);
+}
+
 .VPHomeHero > .container > .main > .tagline {
-  padding-top: 24px;
+  padding-top: 28px;
+  max-width: 560px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: var(--vp-c-text-2);
 }
 
-/* 自适应样式 */
-@media (max-width: 1024px) {
-  /* 首页标题样式 */
-  .VPHomeHero > .container > .main > h1 {
-    font-size: 3.5rem;
-  }
-
-  /* 首页子标题样式 */
-  .VPHomeHero > .container > .main > .text {
-    padding-top: 30px;
-    font-size: 3rem;
-  }
-
-  /* 首页介绍样式 */
-  .VPHomeHero > .container > .main > .tagline {
-    padding-top: 20px;
-  }
+.VPHomeHero > .container > .main > .actions {
+  padding-top: 36px;
+  width: fit-content;
+  max-width: 100%;
 }
 
-/* 自适应样式 */
+.VPHomeHero .VPButton {
+  border-radius: 999px;
+}
+
+.home-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  flex-basis: 100%;
+  width: 100%;
+  padding-top: 18px;
+}
+
+.home-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  color: var(--vp-c-text-2);
+  background: transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-social-link:hover {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+  transform: translateY(-1px);
+}
+
+.home-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.home-social-icon i,
+.home-social-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: currentColor;
+}
+
+.home-social-icon i {
+  background-color: currentColor;
+}
+
+.home-social-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-social-link[aria-label="Spotify"] svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.dark .VPHome {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(197, 100, 115, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(32, 31, 29, 0.72), transparent 42%);
+}
+
 @media (max-width: 640px) {
-  /* 首页标题样式 */
-  .VPHomeHero > .container > .main > h1 {
-    font-size: 2.5rem;
+  .VPHomeHero {
+    min-height: auto;
   }
 
-  /* 首页子标题样式 */
-  .VPHomeHero > .container > .main > .text {
-    padding-top: 20px;
-    font-size: 2rem;
+  .VPHomeHero > .container {
+    padding-top: 96px;
+    padding-bottom: 88px;
   }
 
-  /* 首页介绍样式 */
+  .VPHomeHero > .container > .main .name,
+  .VPHomeHero > .container > .main .text {
+    font-size: 48px;
+  }
+
   .VPHomeHero > .container > .main > .tagline {
-    padding-top: 20px;
+    font-size: 16px;
   }
 }
 

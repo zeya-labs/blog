@@ -43,6 +43,9 @@ const ExtendedTheme: Theme = {
       'doc-footer-before': () => [
         h(DocFooter),
       ],
+      'home-hero-actions-after': () => [
+        h(HomePage),
+      ],
       'nav-bar-content-after': () => [
         h(Share),
         ...slots['nav-bar-content-after'].map(slot => slot()),

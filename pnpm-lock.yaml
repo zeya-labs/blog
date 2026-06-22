@@ -20,6 +20,9 @@ importers:
       '@iconify-json/ic':
         specifier: ^1.2.4
         version: 1.2.4
+      '@iconify-json/mingcute':
+        specifier: ^1.2.7
+        version: 1.2.7
       '@iconify-json/octicon':
         specifier: ^1.2.23
         version: 1.2.23
@@ -679,6 +682,9 @@ packages:
 
   '@iconify-json/icon-park-outline@1.2.2':
     resolution: {integrity: sha512-7VkMWOZTIMNkC9+oAL4I5kVlVC5Pq3nQpruZ4E3cLyKaeV95gaUrEilUkvGW71fgsFYCBWAmOZ3KpM4ux0j0zA==}
+
+  '@iconify-json/mingcute@1.2.7':
+    resolution: {integrity: sha512-bp4z6F53KAQp99aSL7qPCHL7HWUNGMNKIhfo/dx9pwVHiad/WusUbTOFXEZfpA44syJPzSOxa3O6Pwiq7qZz1g==}
 
   '@iconify-json/octicon@1.2.23':
     resolution: {integrity: sha512-Orzy6EGFBuqiME4WAyyv7Wr/RCOtf2EDUiCHBr0glTMyPQWwtZqribj9UEbDPE/ZMlwx79YrQ7sOoDQv1pVqRQ==}
@@ -4175,6 +4181,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/icon-park-outline@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mingcute@1.2.7':
     dependencies:
       '@iconify/types': 2.0.0
 

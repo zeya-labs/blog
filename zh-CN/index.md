@@ -3,15 +3,12 @@ layout: home
 sidebar: false
 
 title: Zeya 的知识库
-titleTemplate: 记录回忆，知识和畅想的地方
+titleTemplate: 你好，我是 Zeya
 
 hero:
-  name: Zeya
-  text: 记录回忆，知识和畅想的地方
-  tagline: 一个用于沉淀学习、研究、开发和生活想法的个人知识库。
-  image:
-    src: /logo.svg
-    alt: Zeya
+  name: 你好 👋
+  text: 我是 Zeya
+  tagline: 记录一些学习、研究、开发和生活里的想法。
   actions:
     - theme: brand
       text: 开始阅读
@@ -20,5 +17,3 @@ hero:
       text: GitHub 上浏览
       link: https://github.com/zeya-labs/blog
 ---
-
-<HomePage />

@@ -4,7 +4,7 @@ import { getAvatarUrlByGithubName } from '../scripts/utils'
 /** 文本 */
 export const siteName = 'Zeya 的知识库'
 export const siteShortName = 'Zeya'
-export const siteDescription = '记录回忆，知识和畅想的地方'
+export const siteDescription = '记录一些学习、研究、开发和生活里的想法。'
 
 /** 文档所在目录 */
 export const include = ['笔记', '生活']
