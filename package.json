@@ -1,17 +1,16 @@
 {
-  "name": "nolebase",
+  "name": "zeya-blog",
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.33.2",
   "author": {
-    "name": "Nólëbase",
-    "email": "nolebase@ayaka.moe",
-    "url": "https://github.com/nolebase"
+    "name": "zeya",
+    "url": "https://github.com/zeya-labs"
   },
   "license": "MIT",
   "keywords": [
     "vitepress",
-    "nolebase",
+    "zeya",
     "markdown",
     "nolebase-integration",
     "obsidian",
