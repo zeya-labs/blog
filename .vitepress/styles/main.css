@@ -64,6 +64,18 @@ html, body {
   max-width: 276px !important;
 }
 
+.vp-doc .home-team-members .VPTeamMembersItem.small .avatar {
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.vp-doc .home-team-members .VPTeamMembersItem.small .avatar-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
 .vp-doc .VPTeamMembers.small.count-2 .container,
 .vp-doc .VPTeamMembers.small.count-3 .container {
   max-width: 1152px !important;
