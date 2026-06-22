@@ -8,7 +8,7 @@ import Inspect from 'vite-plugin-inspect'
 
 import { creators, githubRepoLink } from './metadata'
 
-export default defineConfig(async () => {
+export default defineConfig(async ({ command }) => {
   const nolebase = presetVite({
     gitChangelog: {
       options: {
@@ -48,7 +48,7 @@ export default defineConfig(async () => {
       ],
     },
     plugins: [
-      Inspect(),
+      ...(command === 'serve' ? [Inspect()] : []),
       Components({
         include: [/\.vue$/, /\.md$/],
         dirs: '.vitepress/theme/components',

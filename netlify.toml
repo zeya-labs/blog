@@ -1,3 +1,12 @@
+[build]
+  command = "pnpm run build"
+  publish = ".vitepress/dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
