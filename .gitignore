@@ -8,10 +8,17 @@
 
 # Obsidian
 
-**/.obsidian/*
-!**/.obsidian/workspace*
-!**/.obsidian/graph*
-!**/.obsidian/snippets/
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/community-plugins.json
+!.obsidian/core-plugins.json
+!.obsidian/hotkeys.json
+!.obsidian/snippets/
+
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
 
 # Temporary files
 

@@ -1,0 +1,15 @@
+{
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./assets",
+  "newLinkFormat": "absolute",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "deleteUnlinkedAttachments": "always",
+  "userIgnoreFilters": [
+    "node_modules/",
+    "netlify/",
+    "metadata/",
+    "scripts/",
+    "public/"
+  ]
+}
