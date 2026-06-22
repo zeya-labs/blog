@@ -11,5 +11,6 @@
     "metadata/",
     "scripts/",
     "public/"
-  ]
+  ],
+  "promptDelete": false
 }
