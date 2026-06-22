@@ -21,10 +21,12 @@
 !.obsidian/plugins/obsidian-git/manifest.json
 !.obsidian/plugins/obsidian-git/obsidian_askpass.sh
 !.obsidian/plugins/obsidian-git/styles.css
+!.obsidian/plugins/obsidian-git/data.json
 
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/plugins/*/data.json
+!.obsidian/plugins/obsidian-git/data.json
 
 # Temporary files
 
