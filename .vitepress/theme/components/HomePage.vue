@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VPTeamMembers } from 'vitepress/theme'
-import { creators, githubRepoLink, siteName } from '../../../metadata'
+import { creators, siteName } from '../../../metadata'
 </script>
 
 <template>
@@ -12,19 +12,7 @@ import { creators, githubRepoLink, siteName } from '../../../metadata'
             {{ siteName }} 的维护者
           </h2>
           <div w-full p-10>
-            <VPTeamMembers size="small" :members="creators" flex justify-center />
-          </div>
-
-          <div text-center>
-            <h2 mt-11 pb-2>
-              Source
-            </h2>
-            <p>
-              这个知识库由 Markdown、VitePress 和 Obsidian 共同维护。
-            </p>
-            <p>
-              <a :href="githubRepoLink" target="_blank">在 GitHub 上查看</a>
-            </p>
+            <VPTeamMembers class="home-team-members" size="small" :members="creators" flex justify-center />
           </div>
         </div>
       </main>

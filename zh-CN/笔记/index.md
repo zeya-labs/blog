@@ -1,3 +1,8 @@
+---
+nolebase:
+  gitChangelog: false
+---
+
 # 笔记
 
 这里是 zeya 的笔记入口。
