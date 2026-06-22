@@ -15,6 +15,12 @@
 !.obsidian/core-plugins.json
 !.obsidian/hotkeys.json
 !.obsidian/snippets/
+!.obsidian/plugins/
+!.obsidian/plugins/obsidian-git/
+!.obsidian/plugins/obsidian-git/main.js
+!.obsidian/plugins/obsidian-git/manifest.json
+!.obsidian/plugins/obsidian-git/obsidian_askpass.sh
+!.obsidian/plugins/obsidian-git/styles.css
 
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
