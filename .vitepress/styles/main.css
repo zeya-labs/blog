@@ -58,12 +58,6 @@ html, body {
   }
 }
 
-/* 覆盖 VPTeamMembers 组件内部处理的子元素包含特定 max-width 样式致使元素宽度与正文不一致的问题 */
-.vp-doc .home-team-members.VPTeamMembers.small.count-1 .container {
-  margin: 0 auto !important;
-  max-width: 276px !important;
-}
-
 .vp-doc .home-team-members .VPTeamMembersItem.small .avatar {
   overflow: hidden;
   box-shadow: none;
