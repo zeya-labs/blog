@@ -7,6 +7,7 @@ import { h } from 'vue'
 import AppContainer from './components/AppContainer.vue'
 import DocFooter from './components/DocFooter.vue'
 import HomePage from './components/HomePage.vue'
+import HomeRecentWriting from './components/HomeRecentWriting.vue'
 import Share from './components/Share.vue'
 
 import 'virtual:uno.css'
@@ -46,6 +47,9 @@ const ExtendedTheme: Theme = {
       'home-hero-actions-after': () => [
         h(HomePage),
       ],
+      'home-hero-image': () => [
+        h(HomeRecentWriting),
+      ],
       'nav-bar-content-after': () => [
         h(Share),
         ...slots['nav-bar-content-after'].map(slot => slot()),
@@ -68,6 +72,7 @@ const ExtendedTheme: Theme = {
     await nolebase?.enhanceApp?.(ctx)
 
     app.component('HomePage', HomePage)
+    app.component('HomeRecentWriting', HomeRecentWriting)
     app.component('DocFooter', DocFooter)
     app.component('Share', Share)
     app.component('AppContainer', AppContainer)
