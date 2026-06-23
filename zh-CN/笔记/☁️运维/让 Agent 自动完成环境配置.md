@@ -1,5 +1,5 @@
 ```prompt
-请自动完成环境配置，并遵循以下规则：
+/goal 请自动完成环境配置，并遵循以下规则：
 
 目标：
 安装并配置以下工具：
@@ -9,8 +9,15 @@
 - eza
 - bat
 - fd
-- rg
+- rg, rga
+- delta
 - uv
+- nvtop
+- btop
+- gh
+- tldr
+- delta
+- JetBrainsMono Nerd Font, FiraCode Nerd Font, Hack Nerd Font, MesloLGS Nerd Font
 
 要求：
 1. 必须使用各项目 Git 仓库 / 官方文档当前推荐的安装方式（不要自行选择第三方教程）。
