@@ -23,6 +23,8 @@
 .obsidian/plugins/*/data.json
 !.obsidian/plugins/obsidian-git/data.json
 
+zh-CN/mystery/*
+
 # Temporary files
 
 .temp
