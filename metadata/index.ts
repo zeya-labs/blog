@@ -2,7 +2,7 @@ import type { Creator } from '../scripts/types/metadata'
 import { getAvatarUrlByGithubName } from '../scripts/utils'
 
 /** 文本 */
-export const siteName = 'Zeya 的知识库'
+export const siteName = 'Zeya Notes'
 export const siteShortName = 'Zeya'
 export const siteDescription = '记录一些学习、研究、开发和生活里的想法。'
 

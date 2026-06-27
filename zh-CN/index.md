@@ -2,7 +2,7 @@
 layout: home
 sidebar: false
 
-title: Zeya 的知识库
+title: Zeya Notes
 titleTemplate: 你好，我是 Zeya
 
 hero:
