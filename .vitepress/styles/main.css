@@ -479,6 +479,10 @@ html, body {
   padding-top: 0;
 }
 
+.vp-doc h2 .header-anchor {
+  top: 0;
+}
+
 .vp-doc a {
   text-decoration: none;
   transition: all 0.3s ease;
