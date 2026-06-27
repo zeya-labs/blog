@@ -483,6 +483,10 @@ html, body {
   top: 0;
 }
 
+.vp-doc h1 .header-anchor {
+  margin-left: -0.62em;
+}
+
 .vp-doc a {
   text-decoration: none;
   transition: all 0.3s ease;
