@@ -2,6 +2,32 @@
 
 适用环境：Linux / WSL。脚本会交互式收集模型接口配置，自动补齐基础依赖，安装 Node.js、Codex，并写入 shell 初始化。
 
+## 脚本会做什么
+
+1. 询问 `BASE_URL`、`API_KEY`、模型名和 Node.js 主版本。
+2. 自动检查并补齐 `curl`、`unzip`、`python3`。
+3. 测速并选择可用的 fnm 下载源、Node.js 镜像和 npm registry。
+4. 使用 fnm 安装 Node.js，并全局安装最新版 Codex。
+5. 写入 `~/.codex/config.toml` 和 `~/.codex/auth.json`。
+6. 写入 Bash / Zsh 初始化，让新终端能找到 `fnm`、`node`、`npm`、`codex`。
+7. 最后重进交互式 shell，让当前会话尽量直接可用。
+
+## 默认值
+
+- 模型名：`gpt-5.5`
+- Node.js 主版本：`22`
+- 自动安装缺失依赖：默认确认
+- 覆盖已有 Codex 配置：默认不覆盖
+
+必须手动输入：
+
+- `BASE_URL`
+- `API_KEY`
+
+## 注意事项
+
+如果已有 `~/.codex/config.toml` 或 `~/.codex/auth.json`，脚本会在覆盖前询问，并自动备份为 `.bak.时间戳`。
+
 直接复制执行：
 
 ```bash
