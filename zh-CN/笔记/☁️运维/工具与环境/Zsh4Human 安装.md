@@ -7,6 +7,7 @@
 ## 安装
 
 ```bash
+# 优先用 curl 下载官方安装脚本；没有 curl 时退回 wget。
 if command -v curl >/dev/null 2>&1; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 else
@@ -14,22 +15,32 @@ else
 fi
 ```
 
-## 验证
+这里几个参数的含义：
 
-安装完成后重新打开终端，确认当前 shell：
+- `command -v curl`：检查 `curl` 命令是否存在。
+- `curl -f`：HTTP 请求失败时返回非零退出码。
+- `curl -sS`：静默输出进度，但保留错误信息。
+- `curl -L`：跟随重定向。
+- `wget -O-`：把下载内容输出到标准输出。
+- `sh -c "..."`：把下载到的脚本交给 `sh` 执行。
+
+## 安装后检查
 
 ```bash
+# 当前登录 shell。
 echo "$SHELL"
+
+# zsh 是否安装成功。
 zsh --version
+
+# 当前正在运行的 shell 进程。
+ps -p $$ -o comm=
 ```
 
-## 常见问题
-
-如果下载 GitHub 脚本很慢，可以先配置代理，或把安装脚本下载到本地后再执行。
-
-如果安装后新终端没有进入 Zsh，检查默认 shell：
+如果安装后想把默认 shell 改成 Zsh：
 
 ```bash
-echo "$SHELL"
 chsh -s "$(command -v zsh)"
 ```
+
+执行后重新登录终端生效。

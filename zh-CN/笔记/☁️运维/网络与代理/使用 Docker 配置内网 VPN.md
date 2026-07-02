@@ -22,7 +22,7 @@
 
 ```powershell
 winget install Insecure.Nmap
-````
+```
 
 安装完成后检查：
 
@@ -63,6 +63,16 @@ docker pull hagb/docker-atrust
 ```powershell
 docker run --name atrust --restart unless-stopped --device /dev/net/tun --cap-add NET_ADMIN -d -e PASSWORD=123456 -e URLWIN=1 -e USE_NOVNC=1 -v "%USERPROFILE%\.atrust-data:/root" -p 127.0.0.1:8080:8080 -p 127.0.0.1:5901:5901 -p 127.0.0.1:1080:1080 -p 127.0.0.1:8888:8888 -p 127.0.0.1:54631:54631 --sysctl net.ipv4.conf.default.route_localnet=1 hagb/docker-atrust
 ```
+
+关键参数：
+
+- `--device /dev/net/tun`：允许容器使用 TUN 设备。
+- `--cap-add NET_ADMIN`：允许容器修改网络配置。
+- `--restart unless-stopped`：Docker 重启后自动拉起容器，手动停止除外。
+- `-v "%USERPROFILE%\.atrust-data:/root"`：把容器内配置持久化到用户目录。
+- `-p 127.0.0.1:1080:1080`：只把 SOCKS5 代理暴露到本机。
+- `-p 127.0.0.1:8888:8888`：只把 HTTP 代理暴露到本机。
+
 如果你需要第二个：
 ```powershell
 docker run --name atrust2 --restart unless-stopped --device /dev/net/tun --cap-add NET_ADMIN -d -e PASSWORD=123456 -e URLWIN=1 -e USE_NOVNC=1 -v "%USERPROFILE%\.atrust2-data:/root" -p 127.0.0.1:8081:8080 -p 127.0.0.1:5902:5901 -p 127.0.0.1:1081:1080 -p 127.0.0.1:8889:8888 -p 127.0.0.1:54632:54631 --sysctl net.ipv4.conf.default.route_localnet=1 hagb/docker-atrust

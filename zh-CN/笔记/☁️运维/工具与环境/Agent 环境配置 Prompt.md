@@ -20,7 +20,6 @@
 - btop
 - gh
 - tldr
-- delta
 - JetBrainsMono Nerd Font, FiraCode Nerd Font, Hack Nerd Font, MesloLGS Nerd Font
 
 要求：
