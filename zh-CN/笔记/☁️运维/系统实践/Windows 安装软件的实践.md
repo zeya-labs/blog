@@ -1,3 +1,5 @@
+# Windows 安装软件的实践
+
 Windows 现在比较合理的实践是：
 
 > **WinGet 管常规软件，Scoop 管命令行工具，Microsoft Store 管商店应用，官网负责特殊软件。**

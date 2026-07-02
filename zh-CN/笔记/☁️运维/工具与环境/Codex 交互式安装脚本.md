@@ -1,4 +1,8 @@
-Linux / WSL 直接复制执行：
+# Codex 交互式安装脚本
+
+适用环境：Linux / WSL。脚本会交互式收集模型接口配置，自动补齐基础依赖，安装 Node.js、Codex，并写入 shell 初始化。
+
+直接复制执行：
 
 ```bash
 bash -lc '

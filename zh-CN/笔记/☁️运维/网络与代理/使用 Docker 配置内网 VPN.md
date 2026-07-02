@@ -1,6 +1,8 @@
+# 使用 Docker 配置内网 VPN
+
 ## 目标
 
-在 Windows 上通过 Docker 跑 VPN，然后让 VS Code 的 Remote - SSH 通过本地代理连接内网器。
+在 Windows 上通过 Docker 跑 VPN，然后让 VS Code 的 Remote - SSH 通过本地代理连接内网机器。
 
 ---
 
